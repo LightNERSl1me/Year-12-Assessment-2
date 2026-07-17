@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 
-{% block heading %}TasteTracker{% endblock %}
+{% block heading %}Home{% endblock %}
 
 {% block content %}
-<p>Track and write reviews for resteraunts!</P>
+<p> Time your study, assignments or anything while earning points along the way</p>
 
 <nav>
-    <a href="/register">Register</a>
+    <a href="{{ url_for('timer') }}">Timer</a>
     <a href="/login">Login</a>
-    <a href="/profile">Profile</a>
+    <a href="{{ url_for('register') }}">Register</a>
 </nav>
-
 {% endblock %}

@@ -1,0 +1,10 @@
+{
+    "name": "Study Time tracker",
+    "short_name": "Study Time tracker",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FADADD",
+    "theme_color": "222222",
+    "description": "Study Time tracker, to make studying a little more fun"
+    
+}
