@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      {% block title %}Add Review{% endblock %}
+
+{% block heading %}Register to start reviewing!{% endblock %}
+
+{% block content %}
+<head>
+        <meta charset="UFT-8">
+        <meta name=viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<form method="POST" action="{{ url_for('register') }}">
+
+    <h2> SIGN UP PAGE </h2>
+    
+    <input type="text" id="username" name="username" placeholder="Username" required>
+
+    <input type="email" id="email" name="email" placeholder="Email" required>
+
+    <input type="password" id="password" name="password" placeholder="Password" required>
+
+    <button type="submit">Create Account</button>
+
+    <p style="text-align:centre; margin-top: 10xp;">
+        Already have an account?
+        <a href="{{url_for('login')}}">Login here</a>
+    </p>
+</form>
+ 
+ {% endblock %}

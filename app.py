@@ -4,11 +4,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
 app = Flask(__name__)
-@app.route("/")
-def home():
-    return "Hello, World!"
-
-app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///Year-12-Assessment-2.db"  
@@ -23,7 +18,7 @@ class User(db.Model):
     password_hash = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
 
-@app.route('/')
+@app.route("/")
 def home():
     return render_template("home.html")
 
