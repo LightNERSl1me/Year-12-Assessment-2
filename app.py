@@ -61,7 +61,7 @@ def login():
         if existing_user and check_password_hash(existing_user.password_hash, password):
             session["user_id"] = existing_user.user_id
             session["username"] = existing_user.username
-            return redirect(url_for("dashboard"))
+            return redirect(url_for("home"))
         else:
             flash("Invalid login details")
             
