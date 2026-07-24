@@ -20,6 +20,8 @@ class User(db.Model):
 
 @app.route("/")
 def home():
+    if "user_id" not in session:
+        return redirect(url_for("login"))
     return render_template("home.html")
 
 @app.route("/register", methods=["GET", "POST"])
@@ -61,15 +63,15 @@ def login():
         if existing_user and check_password_hash(existing_user.password_hash, password):
             session["user_id"] = existing_user.user_id
             session["username"] = existing_user.username
-            return redirect(url_for("home"))
+            return redirect(url_for("profile"))
         else:
             flash("Invalid login details")
             
     return render_template("login.html")
 
-@app.route("/timer", methods=["GET", "POST"])
+@app.route("/")
 def timer():
-    return render_template("timer.html")
+    render_template('timer.html')
 
 if __name__ == "__main__":
     with app.app_context():
